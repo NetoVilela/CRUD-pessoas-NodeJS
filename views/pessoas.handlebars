@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <table class="table mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Data de nascimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pessoas}}
+            <tr>
+                <th>{{nome}}</th>
+                <th>{{cpf}}</th>
+                <th>{{moment pessoa.data_de_nascimento format="DD/MM/YYYY"}}</th>
+                <th>
+                    <a style="text-decoration: none;" href="/deletar/{{_id}}">
+                        <i class="fas fa-trash text-danger p-2"></i>
+                    </a>
+                    <a style="text-decoration: none;" href="/editar/{{_id}}">
+                        <i class="fas fa-edit text-success p-2"></i>
+                    </a>
+                </th>
+            </tr>
+        {{else}}
+
+        {{/each}}
+    </tbody>
+</table>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "tentando_sozinho",
+  "version": "1.0.0",
+  "description": "Essa API tem o objetivo de me fazer entender o nodejs enquanto cadastro alguns dados genéricos de pessoas.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "handlebars-helpers": "^0.10.0",
+    "mongoose": "^5.9.15"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NetoVilela/pessoasCRUD.git"
+  },
+  "author": "Neto Vilela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NetoVilela/pessoasCRUD/issues"
+  },
+  "homepage": "https://github.com/NetoVilela/pessoasCRUD#readme"
+}
