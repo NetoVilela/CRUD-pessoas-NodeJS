@@ -35,13 +35,28 @@ router.get('/deletar/:id',(req,res)=>{
 });
 
 router.get('/editar/:id',(req,res)=>{
-    
     Pessoa.findOne({_id: req.params.id}).lean().then((pessoa)=>{
         res.render('edicao', {pessoa: pessoa});
     }).catch((error)=>{
         res.send("Erro ao editar a pessoa: "+error);
     });
-    
+});
+
+router.post('/atualizar',(req,res)=>{
+    Pessoa.findOne({_id: req.body.id}).then((pessoa)=>{
+        pessoa.nome = req.body.nome,
+        pessoa.cpf = req.body.cpf,
+        pessoa.data_de_nascimento = req.body.data_de_nascimento,
+
+        pessoa.save().then(()=>{
+            res.redirect('/paginaLista');
+        }).catch((error)=>{
+            res.send("Erro ao atualizar os dados (catch_primary): "+error);
+        })
+
+    }).catch((error)=>{
+        res.send("Erro ao atualizar os dados: "+error);
+    });
 });
 
 router.post('/cadastrar',(req,res)=>{
@@ -53,7 +68,7 @@ router.post('/cadastrar',(req,res)=>{
     new Pessoa(novaPessoa).save().then(()=>{
         res.redirect('/paginaCadastro');
     }).catch((error)=>{
-        res.send("Erro ao cadastrar uma nova pessoa: "+error);
+        res.redirect('/paginaCadastro');
     });
 });
 
