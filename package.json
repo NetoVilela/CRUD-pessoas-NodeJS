@@ -4,9 +4,9 @@
   "description": "Essa API tem o objetivo de me fazer entender o nodejs enquanto cadastro alguns dados genéricos de pessoas.",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "connect-flash": "^0.1.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
     "handlebars-helpers": "^0.10.0",
